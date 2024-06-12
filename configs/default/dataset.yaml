@@ -1,0 +1,57 @@
+
+cuboid_500_0.2:
+  data_type: splishsplash
+  near: 9.0
+  far: 13.0
+  start_index: 0
+  end_index: 50
+  gravity:
+    - 0.
+    - -9.81
+    - 0
+  train:
+    path: data/cuboid_500_0.2
+    views:
+      warmup: [view_1,view_3,view_5,view_7]
+      dynamic: [view_1]
+  test:
+    path: data/cuboid_500_0.2
+    views: [view_6]
+
+cuboid_1000_0.08:
+  data_type: splishsplash
+  near: 9.0
+  far: 13.0
+  start_index: 0
+  end_index: 50
+  gravity:
+    - 0.
+    - -9.81
+    - 0
+  train:
+    path: data/cuboid_1000_0.08
+    views:
+      warmup: [view_1,view_3,view_5,view_7]
+      dynamic: [view_1]
+  test:
+    path: data/cuboid_1000_0.08
+    views: [view_6]
+
+cuboid_2000_0.065:
+  data_type: splishsplash
+  near: 9.0
+  far: 13.0
+  start_index: 0
+  end_index: 50
+  gravity:
+    - 0.
+    - -9.81
+    - 0
+  train:
+    path: data/cuboid_2000_0.065
+    views:
+      warmup: [view_0, view_6, view_12, view_20]
+      dynamic: [view_20]
+  test:
+    path: data/cuboid_2000_0.065
+    views: [view_0, view_6, view_12]

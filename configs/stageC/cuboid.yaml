@@ -1,0 +1,76 @@
+TRAIN:
+  seed: 10
+  partial_load: False
+  pretained_renderer: 'pretrained_ckpts/warmup/renderer.pt'
+  pretrained_latent: ''
+  pretrained_transition_model: 'pretrained_ckpts/trans_model.pt'
+  seperate_render_transition: True # seperate set learning scheduler for renderer and transition model
+  init_particle_path: 'data/cuboid_500_0.2/cuboid_init_pos.npz'
+  use_encoder: True
+  use_latent: False
+  outside_clip: True
+  LR:
+    trans_lr: 0
+    renderer_lr: 0
+    latent_lr: 0 # 0.0001
+    encoder_lr: 1.0e-4  #0.0001
+    use_scheduler: True
+    use_scheduler_latent: True
+    use_scheduler_encoder: True
+    # decay_eopchs: 10000
+  half_res: False
+  epochs: 1000
+  precrop_iters: 1000
+  save_interval: 2000
+  log_interval: 200
+  imgW: 400
+  imgH: 400
+  scale: 1.0
+  grad_clip_value: 0
+  get_feat: 'particle_sample_multi'
+  particle_res: 6144 # 8028 9032
+  loss_weight:
+    boundary_loss: 0.01
+    encoder_KL_loss: 0.01
+
+TEST:
+  imgW: 400
+  imgH: 400
+  scale: 1.0
+  start_index: 1
+  end_index: 50
+  test_view: 'view_13'
+
+encoder:
+  input_last_latent: True
+  min_std: 0.1
+  n_layers: 0
+  stoch: 8
+  stop_grad: false
+  type: gru
+  use_mean: true
+  use_std: false
+  mean_act: 'tanh'
+
+# configs of renderer
+RENDERER:
+  # scale: 1.0
+  use_mask: True
+  ray:
+    ray_chunk: 1288
+    N_importance: 128  # num of fine sample point
+    N_samples: 64    # num of coarse sample point
+  NN_search:
+    fix_radius: True
+    particle_radius: 0.025
+    search_raduis_scale: 3.0 # 9.0
+    N_neighbor: 20
+  encoding:
+    density: True
+    var: True
+    smoothed_pos: True
+    smoothed_dir: True
+    exclude_ray: True
+    same_smooth_factor: False
+    particle_encode_only: True # True do not use ray particles
+    coarse_scale: 1.3 # 1 scale same with fine

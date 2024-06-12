@@ -1,0 +1,50 @@
+TRAIN:
+  pretained_renderer: 'pretrained_ckpts/warmup/bath_warmup_99999.pt' # 'pretrained_ckpts/renderer_multiscene_799999.pt'
+  seed: 10
+  partial_load: False
+  N_iters: 300000
+  precrop_iters: 5000
+  init_particle_path: 'data/bath/bath_init_pos.npz'  # ''
+  LR:
+    lr: 3.0e-4
+    use_scheduler: True
+    decay_epochs: 200000
+  imgW: 400
+  imgH: 400
+  scale: 1.0
+  save_interval: 5000
+  log_interval: 100
+
+TEST:
+  pretained_renderer: ''
+  imgW: 400
+  imgH: 400
+  scale: 1.0
+  data_path: './data/bath/'
+  test_view : 'view_0'
+  start_index: 0
+  end_index: 50
+  near: 9.0
+  far: 13.0
+  
+# configs of renderer
+RENDERER:
+  use_mask: False # True
+  ray:
+    ray_chunk: 2048
+    N_importance: 128  # num of fine sample point
+    N_samples: 64    # num of coarse sample point
+  NN_search:
+    fix_radius: True
+    particle_radius: 0.025
+    search_raduis_scale: 3.0
+    N_neighbor: 30
+  encoding:
+    density: True
+    var: True
+    smoothed_pos: True
+    smoothed_dir: True
+    exclude_ray: True
+    same_smooth_factor: False
+    particle_encode_only: True # True do not use ray particles
+    coarse_scale: 1.5 # 1 scale same with fine

@@ -1,0 +1,33 @@
+TRAIN:
+  pretrained: .//fluid_simulation/release/ckpts/trans/dlf.pt
+  seed: 10
+  datapath:
+    train: .//fluid_simulation/release/data_release/watercube
+    train_datatype: blender
+    eval: .//fluid_simulation/release/data_release/watercube
+    eval_datatype: blender
+  start_index: 0
+  end_index: 50
+  lr: 1.0e-6
+  N_iters: 100
+  save_interval: 10
+  log_interval: 10
+  grad_clip_value: 0
+  particle_radius: 0.025
+  gravity:
+    - 0.
+    - 0.
+    - -9.81
+
+TEST:
+  seed: 10
+  datapath: data/cube_1000_0.08
+  datatype: blender
+  start_index: 0
+  end_index: 50
+  save_obj: True
+  gravity:
+    - 0.
+    - -9.81
+    - 0
+  init_particle_path: 'data/cube_1000_0.08/cube_init_pos.npz'
