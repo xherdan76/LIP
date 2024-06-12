@@ -1,10 +1,10 @@
-# Latent Intuitive Physics: Learning to Transfer Hidden Physics from a 3D Video
+# Latent Intuitive Physics: Learning to Transfer Hidden Physics from A 3D Video
 [Project Page](https://sites.google.com/view/latent-intuitive-physics/) | [Paper](https://openreview.net/pdf?id=WZu4gUGN13)
 
 
 
 Code for our paper:
-**Latent Intuitive Physics: Learning to Transfer Hidden Physics from a 3D Video**.
+**Latent Intuitive Physics: Learning to Transfer Hidden Physics from A 3D Video**.
 
 Xiangming Zhu, Huayu Deng, Haochen Yuan, [Yunbo Wang](https://wyb15.github.io/)<sup>†</sup>, [Xiaokang Yang](https://scholar.google.com/citations?user=yDEavdMAAAAJ&hl=zh-CN)
 
