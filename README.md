@@ -1,4 +1,4 @@
-# Latent Intuitive Physics
+# Latent Intuitive Physics: Learning to Transfer Hidden Physics from a 3D Video
 [Project Page](https://sites.google.com/view/latent-intuitive-physics/) | [Paper](https://openreview.net/pdf?id=WZu4gUGN13)
 
 
